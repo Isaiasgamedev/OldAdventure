@@ -1,0 +1,238 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://Scenes/Game/Assets/transition/Logo.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Game/Assets/Main/bg.png" type="Texture" id=2]
+[ext_resource path="res://Assets/TileMaps/GothicVaniaCemetery/Props/tree-2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/TileMaps/GothicVaniaCemetery/Props/tree-1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/TileMaps/GothicVaniaCemetery/Props/statue.png" type="Texture" id=5]
+[ext_resource path="res://Assets/TileMaps/GothicVaniaCemetery/Props/bush-large.png" type="Texture" id=6]
+[ext_resource path="res://Assets/TileMaps/GothicVaniaCemetery/Props/bush-small.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Parallax/background.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Parallax/mountains.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Parallax/graveyard.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Game/Assets/Main/options.png" type="Texture" id=11]
+[ext_resource path="res://Scenes/Game/Assets/Main/more.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/Game/Assets/Main/new.png" type="Texture" id=13]
+[ext_resource path="res://Assets/TileMaps/GothicVaniaCemetery/Props/Torch/6.png" type="Texture" id=14]
+[ext_resource path="res://Assets/TileMaps/GothicVaniaCemetery/Props/Torch/3.png" type="Texture" id=15]
+[ext_resource path="res://Assets/TileMaps/GothicVaniaCemetery/Props/Torch/5.png" type="Texture" id=16]
+[ext_resource path="res://Assets/TileMaps/GothicVaniaCemetery/Props/Torch/4.png" type="Texture" id=17]
+[ext_resource path="res://Assets/TileMaps/GothicVaniaCemetery/Props/Torch/1.png" type="Texture" id=18]
+[ext_resource path="res://Assets/TileMaps/GothicVaniaCemetery/Props/Torch/2.png" type="Texture" id=19]
+[ext_resource path="res://Scenes/Game/Scripts/Main.gd" type="Script" id=20]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Main"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Cena/background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 654.217, -116.56 ), Vector2( 654.217, 312.633 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Tourch"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 15 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 14 ) ]
+}
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 20 )
+
+[node name="Cena" type="Node2D" parent="."]
+
+[node name="bg" type="Sprite" parent="Cena"]
+texture = ExtResource( 2 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="background" type="Sprite" parent="Cena"]
+position = Vector2( 654.217, -116.56 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 8 )
+
+[node name="graveyard" type="Sprite" parent="Cena"]
+position = Vector2( 654.217, 558.633 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 10 )
+
+[node name="mountains" type="Sprite" parent="Cena"]
+position = Vector2( 620.645, 895.696 )
+scale = Vector2( 7, 7 )
+texture = ExtResource( 9 )
+
+[node name="tree-2" type="Sprite" parent="Cena"]
+position = Vector2( 7.55146, 434.468 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 3 )
+
+[node name="tree-1" type="Sprite" parent="Cena"]
+position = Vector2( 1280.42, 430.961 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="statue" type="Sprite" parent="Cena"]
+position = Vector2( 98.1825, 535.326 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 5 )
+flip_h = true
+
+[node name="statue2" type="Sprite" parent="Cena"]
+position = Vector2( 1073.12, 535.326 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 5 )
+
+[node name="bush-large" type="Sprite" parent="Cena"]
+position = Vector2( 81.2548, 639.883 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 6 )
+
+[node name="bush-large2" type="Sprite" parent="Cena"]
+position = Vector2( 1080.36, 639.883 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 6 )
+flip_h = true
+
+[node name="bush-small" type="Sprite" parent="Cena"]
+position = Vector2( 148.332, 689.049 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 7 )
+
+[node name="bush-small2" type="Sprite" parent="Cena"]
+position = Vector2( 201.366, 689.049 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 7 )
+
+[node name="bush-small4" type="Sprite" parent="Cena"]
+position = Vector2( 252.794, 689.049 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 7 )
+
+[node name="bush-small3" type="Sprite" parent="Cena"]
+position = Vector2( 305.828, 689.049 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 7 )
+
+[node name="bush-small8" type="Sprite" parent="Cena"]
+position = Vector2( 351.074, 689.049 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 7 )
+
+[node name="bush-small7" type="Sprite" parent="Cena"]
+position = Vector2( 404.108, 689.049 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 7 )
+
+[node name="bush-small6" type="Sprite" parent="Cena"]
+position = Vector2( 455.536, 689.049 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 7 )
+
+[node name="bush-small5" type="Sprite" parent="Cena"]
+position = Vector2( 508.57, 689.049 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 7 )
+
+[node name="bush-small12" type="Sprite" parent="Cena"]
+position = Vector2( 558.683, 689.049 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 7 )
+
+[node name="bush-small11" type="Sprite" parent="Cena"]
+position = Vector2( 611.717, 689.049 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 7 )
+
+[node name="bush-small10" type="Sprite" parent="Cena"]
+position = Vector2( 663.145, 689.049 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 7 )
+
+[node name="bush-small9" type="Sprite" parent="Cena"]
+position = Vector2( 716.179, 689.049 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 7 )
+
+[node name="bush-small16" type="Sprite" parent="Cena"]
+position = Vector2( 770.83, 689.049 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 7 )
+
+[node name="bush-small15" type="Sprite" parent="Cena"]
+position = Vector2( 823.864, 689.049 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 7 )
+
+[node name="bush-small14" type="Sprite" parent="Cena"]
+position = Vector2( 875.292, 689.049 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 7 )
+
+[node name="bush-small13" type="Sprite" parent="Cena"]
+position = Vector2( 928.327, 689.049 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 7 )
+
+[node name="bush-small18" type="Sprite" parent="Cena"]
+position = Vector2( 977.395, 689.049 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 7 )
+
+[node name="bush-small17" type="Sprite" parent="Cena"]
+position = Vector2( 1030.43, 689.049 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 7 )
+
+[node name="new" type="Sprite" parent="."]
+position = Vector2( 751.07, 319.196 )
+texture = ExtResource( 13 )
+
+[node name="options" type="Sprite" parent="."]
+position = Vector2( 751.07, 397.826 )
+texture = ExtResource( 11 )
+
+[node name="more" type="Sprite" parent="."]
+position = Vector2( 751.07, 479.258 )
+texture = ExtResource( 12 )
+
+[node name="Logo" type="Sprite" parent="."]
+position = Vector2( 308.574, 3.50653 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="anim" type="AnimationPlayer" parent="."]
+autoplay = "Main"
+anims/Main = SubResource( 1 )
+
+[node name="Tourch" type="Node2D" parent="."]
+position = Vector2( -531.413, -305.711 )
+scale = Vector2( 2, 2 )
+
+[node name="sprite" type="Sprite" parent="Tourch"]
+position = Vector2( 531.707, 297.109 )
+texture = ExtResource( 14 )
+
+[node name="animtourch" type="AnimationPlayer" parent="Tourch"]
+autoplay = "Tourch"
+anims/Tourch = SubResource( 2 )

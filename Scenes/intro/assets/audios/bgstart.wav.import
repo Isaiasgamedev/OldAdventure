@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bgstart.wav-1899ae2e2ce251f642f477efdb809360.sample"
+
+[deps]
+
+source_file="res://Scenes/intro/assets/audios/bgstart.wav"
+dest_files=[ "res://.import/bgstart.wav-1899ae2e2ce251f642f477efdb809360.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

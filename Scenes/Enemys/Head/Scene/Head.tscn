@@ -1,0 +1,158 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Scenes/Enemys/Head/Assets/4.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Enemys/Head/Scripts/Head.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Enemys/Head/Scripts/HeadType.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Enemys/Head/Assets/1.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Enemys/Head/Assets/3.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Enemys/Head/Assets/2.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Enemys/Head/Assets/Hurt/1.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Enemys/Head/Assets/Hurt/3.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Enemys/Head/Assets/Hurt/2.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/Enemys/Head/Assets/Hurt/4.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Enemy/enemy-death/enemy-death-1.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Enemy/enemy-death/enemy-death-5.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Enemy/enemy-death/enemy-death-3.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Enemy/enemy-death/enemy-death-2.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Enemy/enemy-death/enemy-death-4.png" type="Texture" id=15]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 5873.04, -198.121, 61.0041, -52.5633, -61.0041, 52.5633, 5785.46, -197.958, 0, 0, 0, 0, 5700.84, -191.694, 48.7265, -63.3061, -48.7265, 63.3061, 5635.05, -192.461, 0, 0, 0, 0, 5554.71, -182.486, 49.716, -86.2458, -49.716, 86.2458, 5479.89, -182.102, 0, 0, 0, 0, 5401.02, -170.208, 46.0212, -108.096, -46.0212, 108.096, 5278.67, -173.485, 0, 0, 0, 0, 5126.69, -149.939, 116.658, -113.448, -116.658, 113.448, 4965.34, -165.993, 0, 0, 0, 0, 4760.92, -151.009, 73.848, -83.4803, -73.848, 83.4803, 4591.82, -149.939, 0, 0, 0, 0, 4345.76, -151.009, 145.555, -95.2532, -145.555, 95.2532, 4088, -155.29, 0, 0, 0, 0, 3813.85, -158.501, 203.35, -131.642, -203.35, 131.642, 3476.57, -158.501, 0, 0, 0, 0, 3134.58, -158.501, 174.452, -136.993, -174.452, 136.993, 2726.33, -161.712, 0, 0, 0, 0, 2343.84, -169.204, 173.382, -156.258, -173.382, 156.258, 1961.11, -173.485, 0, 0, 0, 0, 1568.83, -174.555, 170.171, -149.837, -170.171, 149.837, 1251.46, -175.625, 0, 0, 0, 0, 966.039, -176.695, 174.452, -129.502, -174.452, 129.502, 722.93, -178.836, 0, 0, 0, 0, 430.919, -177.766, 132.712, -120.939, -132.712, 120.939, 113.304, -179.906, 0, 0, 0, 0, -136.472, -182.047, 99.5342, -124.15, -99.5342, 124.15, -396.126, -189.538, 0, 0, 0, 0, -612.318, -192.749, 37.4591, -97.3937, -37.4591, 97.3937, -722.533, -198.342 )
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Death"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("fire:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 12 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fire:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("sprite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("area/shape:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Hurt"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("follow/body/sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 10 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 7.07861, 3.80151 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10.2959, 7.51233 )
+
+[node name="Head" type="Path2D"]
+position = Vector2( 2.04401, 808.64 )
+z_index = 4
+curve = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="follow" type="PathFollow2D" parent="."]
+position = Vector2( 5859.95, -213.077 )
+rotation = -2.54254
+offset = 20.0
+
+[node name="body" type="KinematicBody2D" parent="follow"]
+scale = Vector2( 2, 2 )
+script = ExtResource( 3 )
+
+[node name="anim" type="AnimationPlayer" parent="follow/body"]
+autoplay = "move"
+anims/Death = SubResource( 6 )
+anims/Hurt = SubResource( 4 )
+anims/move = SubResource( 5 )
+
+[node name="fire" type="Sprite" parent="follow/body"]
+visible = false
+position = Vector2( -1.3689, 15.1901 )
+z_index = 5
+texture = ExtResource( 12 )
+flip_v = true
+
+[node name="sprite" type="Sprite" parent="follow/body"]
+texture = ExtResource( 4 )
+flip_h = true
+flip_v = true
+
+[node name="shape" type="CollisionShape2D" parent="follow/body"]
+position = Vector2( -1.71094, -3.13647 )
+shape = SubResource( 2 )
+
+[node name="area" type="Area2D" parent="follow/body"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="shape" type="CollisionShape2D" parent="follow/body/area"]
+position = Vector2( -0.41333, -0.9729 )
+shape = SubResource( 3 )
+[connection signal="body_entered" from="follow/body/area" to="follow/body" method="_on_area_body_entered"]

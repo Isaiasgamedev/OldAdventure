@@ -1,0 +1,115 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://Scenes/Levels/Item/Scripts/Item5.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Textures/Lights/light.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Levels/Item/Assets/WeaponQuant/Atom/idle/Atom_idle5.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Levels/Item/Assets/WeaponQuant/Atom/idle/Atom_idle6.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Levels/Item/Assets/WeaponQuant/Atom/explode/Atom_explode1.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Levels/Item/Assets/WeaponQuant/Atom/idle/Atom_idle3.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Levels/Item/Assets/WeaponQuant/Atom/idle/Atom_idle10.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Levels/Item/Assets/WeaponQuant/Atom/explode/Atom_explode2.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Levels/Item/Assets/WeaponQuant/Atom/idle/Atom_idle8.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/Levels/Item/Assets/WeaponQuant/Atom/explode/Atom_explode3.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Levels/Item/Assets/WeaponQuant/Atom/idle/Atom_idle1.png" type="Texture" id=11]
+[ext_resource path="res://Scenes/Levels/Item/Assets/WeaponQuant/Atom/idle/Atom_idle2.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/Levels/Item/Assets/WeaponQuant/Atom/idle/Atom_idle4.png" type="Texture" id=13]
+[ext_resource path="res://Scenes/Levels/Item/Assets/WeaponQuant/Atom/idle/Atom_idle7.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/Levels/Item/Assets/WeaponQuant/Atom/idle/Atom_idle9.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/Levels/Item/Assets/WeaponQuant/Atom/explode/Atom_explode5.png" type="Texture" id=16]
+[ext_resource path="res://Scenes/Levels/Item/Assets/WeaponQuant/Atom/explode/Atom_explode4.png" type="Texture" id=17]
+[ext_resource path="res://Scenes/Levels/Item/Assets/WeaponQuant/Atom/explode/Atom_explode6.png" type="Texture" id=18]
+
+[sub_resource type="Animation" id=1]
+resource_name = "TakeCoin"
+length = 0.5
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "_PointsWeapon"
+}, {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 5 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 18 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.9
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 14 ), ExtResource( 9 ), ExtResource( 15 ), ExtResource( 7 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("anim:playback_speed")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 1.0 ]
+}
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 5.90198
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 8.48884
+
+[node name="Item" type="KinematicBody2D"]
+collision_layer = 6
+collision_mask = 6
+script = ExtResource( 1 )
+
+[node name="anim" type="AnimationPlayer" parent="."]
+autoplay = "coin"
+anims/TakeCoin = SubResource( 1 )
+anims/coin = SubResource( 2 )
+
+[node name="sprite" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+
+[node name="shape" type="CollisionShape2D" parent="."]
+shape = SubResource( 3 )
+
+[node name="light" type="Light2D" parent="."]
+texture = ExtResource( 2 )
+texture_scale = 0.05
+
+[node name="area" type="Area2D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="shape" type="CollisionShape2D" parent="area"]
+shape = SubResource( 4 )
+[connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]

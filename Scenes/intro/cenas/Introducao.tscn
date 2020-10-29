@@ -1,0 +1,229 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Scenes/intro/script/Introducao.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/intro/assets/bg_black.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/intro/assets/bg_white.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/intro/assets/bg.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/intro/assets/isaias.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/intro/assets/godot_cara.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/intro/assets/godot_name.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/intro/assets/palpebra.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/intro/assets/audios/alarm.wav" type="AudioStream" id=9]
+[ext_resource path="res://Scenes/intro/assets/audios/blink.wav" type="AudioStream" id=10]
+[ext_resource path="res://Scenes/intro/assets/audios/bgstart.wav" type="AudioStream" id=11]
+[ext_resource path="res://Scenes/intro/assets/weapons.png" type="Texture" id=12]
+
+[sub_resource type="Animation" id=1]
+resource_name = "intro"
+length = 5.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("bg_white:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1280, 2.65 ), Vector2( -1280, 0 ), Vector2( 1280, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("palpebra:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.4, 2.7, 2.9, 3.2, 4.5, 4.8, 5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 411.785, 213.588 ), Vector2( 411.785, 213.588 ), Vector2( 411.785, 257.033 ), Vector2( 411.785, 256.483 ), Vector2( 411.555, 213.514 ), Vector2( 411.555, 213.514 ), Vector2( 411.555, 257.449 ), Vector2( 411.555, 257.449 ), Vector2( 411.555, 213.22 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("bg:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 5.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("isaias:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 5.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("godot_cara:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 5.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("godot_name:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 5.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("palpebra:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 5.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("bg_black:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 5.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/8/type = "method"
+tracks/8/path = NodePath("luz")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0.2, 2.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/9/type = "method"
+tracks/9/path = NodePath("piscar")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 2.5, 4.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/10/type = "method"
+tracks/10/path = NodePath("bg_sound")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/11/type = "method"
+tracks/11/path = NodePath(".")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 5.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "trasition"
+} ]
+}
+
+[node name="Introducao" type="Node2D"]
+scale = Vector2( 1.00191, 1.00341 )
+script = ExtResource( 1 )
+
+[node name="bg_black" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="bg_white" type="Sprite" parent="."]
+position = Vector2( 1280, 1.94333 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Light2D" type="Light2D" parent="bg_white"]
+position = Vector2( 635, 361.057 )
+scale = Vector2( 11.5938, 11.5938 )
+texture = ExtResource( 12 )
+mode = 2
+
+[node name="bg" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="isaias" type="Sprite" parent="."]
+position = Vector2( 747.467, 299.945 )
+texture = ExtResource( 5 )
+
+[node name="godot_cara" type="Sprite" parent="."]
+position = Vector2( 360, 368.319 )
+texture = ExtResource( 6 )
+
+[node name="godot_name" type="Sprite" parent="."]
+position = Vector2( 743.824, 500.922 )
+texture = ExtResource( 7 )
+
+[node name="palpebra" type="Sprite" parent="."]
+position = Vector2( 411.555, 248.603 )
+texture = ExtResource( 8 )
+
+[node name="anim" type="AnimationPlayer" parent="."]
+autoplay = "intro"
+anims/intro = SubResource( 1 )
+
+[node name="luz" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+
+[node name="piscar" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 10 )
+
+[node name="bg_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 11 )
